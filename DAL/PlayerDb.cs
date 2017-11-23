@@ -1,9 +1,8 @@
 ﻿using BOL;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -13,26 +12,25 @@ namespace DAL
         {
             return db.Players.ToList();
         }
-        /*
-        public Role GetByID(Guid Id)
+        public Player GetByID(Guid Id)
         {
-            return db.Roles.Find(Id);
+            return db.Players.Find(Id);
         }
-        public void Insert(Role role)
+        public void Insert(Player player)
         {
 
-            db.Roles.Add(role);
+            db.Players.Add(player);
             Save();
         }
         public void Delete(Guid Id)
         {
-            Role role = db.Roles.Find(Id);
-            db.Roles.Remove(role);
+            Player player = db.Players.Find(Id);
+            db.Players.Remove(player);
             Save();
         }
-        public void Update(Role role)
+        public void Update(Player player)
         {
-            db.Entry(role).State = EntityState.Modified;
+            db.Entry(player).State = EntityState.Modified;
             db.Configuration.ValidateOnSaveEnabled = false;
             Save();
             db.Configuration.ValidateOnSaveEnabled = true;
@@ -41,6 +39,5 @@ namespace DAL
         {
             db.SaveChanges();
         }
-        */
     }
 }
