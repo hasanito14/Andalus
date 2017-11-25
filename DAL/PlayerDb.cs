@@ -16,6 +16,11 @@ namespace DAL
         {
             return db.Players.Find(Id);
         }
+
+        public Player GetByEmail(string email)
+        {
+            return db.Players.Where(x => x.Email == email).FirstOrDefault();
+        }
         public void Insert(Player player)
         {
 

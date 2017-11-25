@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="info.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,13 +58,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{5dee4654-8621-4437-a51b-ddd161a51666}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BOL\BOL.csproj">
       <Project>{E6F042B7-5110-4C40-B50C-1248D4D5769B}</Project>
       <Name>BOL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{83841228-7e9c-4fd0-8562-b833abf6801f}</Project>
-      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
