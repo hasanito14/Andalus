@@ -53,8 +53,22 @@ namespace BOL
         public string Country { get; set; }
         public Int16 Phone { get; set; }
         public Guid RoleId { get; set; }
+        public Guid TeamId { get; set; }
+        public string Postion { get; set; }
+        public int Goals { get; set; }
+        public int Saves { get; set; }
+        public int Assists { get; set; }
+        public bool ApprovalFromParents { get; set; }
+        public int Payment { get; set; }
+        public int Points { get; set; }
+        public bool CommunityProject { get; set; }
 
+        [ForeignKey("RoleId")]
         public virtual Role Role { get; set; }
+
+        [ForeignKey("TeamId")]
+        public virtual Team Team { get; set; }
+
 
     }
 }
