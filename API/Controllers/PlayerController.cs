@@ -1,4 +1,5 @@
 ﻿using BLL;
+using BOL;
 using System;
 using System.Web.Http;
 
@@ -6,10 +7,15 @@ namespace API.Controllers
 {
     public class PlayerController : ApiController
     {
+        PlayerBL pdb;
+        public PlayerController()
+        {
+            pdb = new PlayerBL();
+        }
 
         [HttpGet]
         [Route("api/Player/{Id}")]
-        public IHttpActionResult getById(Guid Id)
+        public IHttpActionResult getById([FromUri] Guid Id)
         {
             PlayerBL pdb = new PlayerBL();
             var result = pdb.GetById(Id);
@@ -23,6 +29,36 @@ namespace API.Controllers
         {
             PlayerBL pdb = new PlayerBL();
             var result = pdb.GetByEmail(email);
+            return Ok(result);
+
+        }
+
+        [HttpPut]
+        [Route("api/Player}")]
+        public IHttpActionResult Update([FromBody] Player player)
+        {
+            PlayerBL pdb = new PlayerBL();
+            var result = pdb.Update(player);
+            return Ok(result);
+
+        }
+
+        [HttpPost]
+        [Route("api/Player}")]
+        public IHttpActionResult Add([FromBody] Player player)
+        {
+            PlayerBL pdb = new PlayerBL();
+            var result = pdb.Add(player);
+            return Ok(result);
+
+        }
+
+        [HttpDelete]
+        [Route("api/Player}")]
+        public IHttpActionResult Delete([FromUri] Guid Id)
+        {
+            PlayerBL pdb = new PlayerBL();
+            var result = pdb.Delete(Id);
             return Ok(result);
 
         }
