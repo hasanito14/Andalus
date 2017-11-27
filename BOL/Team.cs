@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace BOL
 {
     [Table("Team")]
-    public class Team
+    public partial class Team
     {
         public Team()
         {
@@ -17,13 +17,13 @@ namespace BOL
         public string CaptainName { get; set; }
         public int Points { get; set; }
         public int wins { get; set; }
-        public string PlyaerName1 { get; set; }
-        public string PlyaerName2 { get; set; }
-        public string PlyaerName3 { get; set; }
-        public string PlyaerName4 { get; set; }
-        public string PlyaerName5 { get; set; }
-        public string PlyaerName6 { get; set; }
-        public string PlyaerName7 { get; set; }
+        public string PlayerName1 { get; set; }
+        public string PlayerName2 { get; set; }
+        public string PlayerName3 { get; set; }
+        public string PlayerName4 { get; set; }
+        public string PlayerName5 { get; set; }
+        public string PlayerName6 { get; set; }
+        public string PlayerName7 { get; set; }
 
     }
 }

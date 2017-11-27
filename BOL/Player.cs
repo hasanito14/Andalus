@@ -62,6 +62,8 @@ namespace BOL
         public int Payment { get; set; }
         public int Points { get; set; }
         public bool CommunityProject { get; set; }
+        public double NotificationsVersion { get; set; }
+        public DateTime LastNotificationsDate { get; set; }
 
         [ForeignKey("RoleId")]
         public virtual Role Role { get; set; }
