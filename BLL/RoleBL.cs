@@ -5,32 +5,31 @@ using System.Collections.Generic;
 
 namespace BLL
 {
-    public class PlayerBL
+    public class RoleBL
     {
-        private PlayerDb pdb;
+        private RoleDb rdb;
 
-        public PlayerBL()
+        public RoleBL()
         {
-            pdb = new PlayerDb();
-
+            rdb = new RoleDb();
         }
 
-        public IEnumerable<Player> GetAll()
+        public IEnumerable<Role> GetAll()
         {
-            return pdb.GetALL();
+            return rdb.GetALL();
         }
 
-        public Player GetById(Guid Id)
+        public Role GetById(Guid Id)
         {
-            return pdb.GetByID(Id);
+            return rdb.GetByID(Id);
         }
 
-        public bool Add(Player player)
+        public bool Add(Role role)
         {
             bool status = false;
             try
             {
-                pdb.Insert(player);
+                rdb.Insert(role);
                 status = true;
             }
             catch (Exception ex)
@@ -44,17 +43,13 @@ namespace BLL
 
         }
 
-        public Player GetByEmail(string email)
-        {
-            return pdb.GetByEmail(email);
-        }
 
         public bool Delete(Guid Id)
         {
             bool status = false;
             try
             {
-                pdb.Delete(Id);
+                rdb.Delete(Id);
                 status = true;
             }
             catch (Exception ex)
@@ -67,12 +62,12 @@ namespace BLL
 
         }
 
-        public bool Update(Player player)
+        public bool Update(Role role)
         {
             bool status = false;
             try
             {
-                pdb.Update(player);
+                rdb.Update(role);
                 status = true;
             }
             catch (Exception ex)
@@ -83,9 +78,6 @@ namespace BLL
 
             return status;
         }
-
-
-
 
     }
 }

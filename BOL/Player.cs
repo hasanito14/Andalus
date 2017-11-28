@@ -10,6 +10,7 @@ namespace BOL
         public Player()
         {
             PalyerId = Guid.NewGuid();
+
         }
 
         [Key]
